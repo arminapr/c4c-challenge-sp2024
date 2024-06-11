@@ -1,0 +1,41 @@
+.partner-tile {
+    width: 450px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #3d3d3d;
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+.partner-thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.partner-info {
+    font-size: 0.9em;
+}
+
+.active-status {
+    color: green;
+}
+
+.inactive-status {
+    color: red;
+}
+
+.partner-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+p {
+    text-align: justify;
+}

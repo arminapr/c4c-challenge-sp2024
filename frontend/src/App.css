@@ -1,0 +1,30 @@
+/* 
+  ================
+  COMPONENT STYLES
+  ================
+*/
+
+/* MainDisplay */
+
+#main-content {
+  width: 1000px;
+  padding: 20px 30px;
+  margin: auto;
+}
+
+#main-partners-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 25px;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 24pt;
+
+  padding-bottom: 25px;
+}
