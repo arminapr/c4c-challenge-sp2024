@@ -26,6 +26,30 @@ function PartnerTile({ partnerData }: PartnerTileProps) {
     return `${trimmedText.substring(0, trimmedText.lastIndexOf(' '))}...`;
   };
 
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete the partner: ${partnerData.name}?`);
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:4000/${partnerData.id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        console.log(`Partner ${partnerData.name} deleted successfully`);
+      } else {
+        console.error(`Error deleting partner: ${response.status} ${response.statusText}`);
+      }
+    } catch (error: any) {
+      console.error(`Error deleting partner: ${error.message}`);
+    }
+
+    window.location.reload();
+  };
+
   return (
     <div className="partner-tile">
       <div className="partner-info">
@@ -54,7 +78,7 @@ function PartnerTile({ partnerData }: PartnerTileProps) {
           </Button>
         )}
       </div>
-      <Button variant="contained" className="partner-delete">
+      <Button variant="contained" className="partner-delete" onClick={handleDelete}>
         Delete
       </Button>
     </div>

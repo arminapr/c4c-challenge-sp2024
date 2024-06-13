@@ -21,7 +21,8 @@ function EntryCard() {
             description,
             websiteUrl,
             thumbnailUrl,
-            isActive
+            isActive,
+            id: name.toLowerCase().replace(/\s+/g, '') 
         };
 
         try {

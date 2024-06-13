@@ -47,6 +47,17 @@ app.post('/', (req: Request, res: Response) => {
   res.status(201).send(newPartner);
 });
 
+app.delete('/:id', (req: Request, res: Response) => {
+  const partnerId = req.params.id;
+
+  if (partners[partnerId]) {
+    delete partners[partnerId];
+    res.status(200).send({ message: 'Partner deleted successfully' });
+  } else {
+    res.status(404).send({ message: 'Partner not found' });
+  }
+});
+
 // Start the backend
 app.listen(port, () => {
   console.log(`Express server starting on port ${port}!`);
