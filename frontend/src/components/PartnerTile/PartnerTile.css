@@ -1,3 +1,5 @@
+/* PartnerTile Styles */
+
 .partner-tile {
     width: 450px;
     height: 400px;
@@ -11,6 +13,16 @@
     border-radius: 12px;
 
     padding: 25px;
+}
+
+.partner-title {
+    text-decoration: none;
+    color: #000000;
+
+    &:hover {
+        text-decoration: underline;
+        color: #3f3333;
+    }
 }
 
 .partner-thumbnail {
@@ -36,6 +48,15 @@
     justify-content: space-between;
 }
 
-p {
-    text-align: justify;
+.partner-delete {
+    background-color: rgb(144, 18, 18) !important;
+
+    &:hover {
+        /* background-color: gray !important; */
+        background: linear-gradient(#b4bed1, #690622);;
+    }
+}
+
+.toggle-description {
+    color: #90bb85 !important;
 }

@@ -11,6 +11,7 @@ import { useState } from 'react';
 function EntryCard() {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const [websiteUrl, setWebsiteUrl] = useState('');
     const [thumbnailUrl, setThumbnailUrl] = useState('');
     const [isActive, setIsActive] = useState(false);
 
@@ -18,6 +19,7 @@ function EntryCard() {
         const partnerData = {
             name,
             description,
+            websiteUrl,
             thumbnailUrl,
             isActive
         };
@@ -40,6 +42,8 @@ function EntryCard() {
         } catch (error) {
             console.error('Error posting data:', error);
         }
+
+        window.location.reload();
     };
 
     return (
@@ -60,6 +64,14 @@ function EntryCard() {
                     required
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                />
+                <TextField
+                    id="partnerUrl"
+                    label="Website URL"
+                    variant="filled"
+                    required
+                    value={websiteUrl}
+                    onChange={(e) => setWebsiteUrl(e.target.value)}
                 />
                 <TextField
                     id="thumbnailUrl"

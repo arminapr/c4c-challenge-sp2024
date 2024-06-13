@@ -1,10 +1,4 @@
-/* 
-  ================
-  COMPONENT STYLES
-  ================
-*/
-
-/* MainDisplay */
+/* MainDisplay and Dashboard Styles */
 
 #main-content {
   width: 1000px;
@@ -14,7 +8,7 @@
 
 #main-partners-grid {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -27,4 +21,8 @@ h1.title {
   font-size: 24pt;
 
   padding-bottom: 25px;
+}
+
+p {
+  text-align: justify;
 }

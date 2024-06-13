@@ -1,3 +1,5 @@
+/* EntryCard Styles */
+
 .entry-card {
     width: 600px;
     height: 300px;
@@ -22,10 +24,6 @@
     justify-content: space-between;
 
     padding: 25px;
-}
-
-.entry-activeCheckbox {
-    transform: translate(-90%);
 }
 
 .entry-submissionButton {
