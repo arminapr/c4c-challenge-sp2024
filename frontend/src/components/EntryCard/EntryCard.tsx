@@ -15,6 +15,7 @@ function EntryCard() {
     const [thumbnailUrl, setThumbnailUrl] = useState('');
     const [isActive, setIsActive] = useState(false);
 
+    // send the partner data to the server after the user submits the information
     const handleSubmit = async () => {
         const partnerData = {
             name,
@@ -39,9 +40,9 @@ function EntryCard() {
             }
 
             const result = await response.json();
-            console.log('Data posted successfully:', result);
+            alert(`Data posted successfully to the server: ${result}`);
         } catch (error) {
-            console.error('Error posting data:', error);
+            console.error('Error posting data to the server:', error);
         }
 
         window.location.reload();

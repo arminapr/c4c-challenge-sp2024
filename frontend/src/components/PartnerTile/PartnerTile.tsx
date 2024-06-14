@@ -20,31 +20,28 @@ function PartnerTile({ partnerData }: PartnerTileProps) {
     setIsDescriptionExpanded(!isDescriptionExpanded);
   };
 
+  // The description should be cut if it has more than 200 characters (cuts by the last full word)
   const getDescriptionPreview = (description: string, length: number) => {
     if (description.length <= length) return description;
     const trimmedText = description.substring(0, length);
     return `${trimmedText.substring(0, trimmedText.lastIndexOf(' '))}...`;
   };
 
+  // Delete the partner from the server and also the page
   const handleDelete = async () => {
     const confirmDelete = window.confirm(`Are you sure you want to delete the partner: ${partnerData.name}?`);
 
-    if (!confirmDelete) {
-      return;
-    }
-
+    if (!confirmDelete) { return; }
     try {
       const response = await fetch(`http://localhost:4000/${partnerData.id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
-        console.log(`Partner ${partnerData.name} deleted successfully`);
-      } else {
-        console.error(`Error deleting partner: ${response.status} ${response.statusText}`);
+        console.error(`Error deleting partner from the server: ${response.status} ${response.statusText}`);
       }
     } catch (error: any) {
-      console.error(`Error deleting partner: ${error.message}`);
+      alert(`Error deleting partner : ${error.message}`);
     }
 
     window.location.reload();

@@ -28,3 +28,7 @@ body {
 p {
   text-align: justify;
 }
+
+button:hover {
+  background-color: gray !important;
+}
